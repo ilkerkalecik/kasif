@@ -131,6 +131,7 @@ button:focus,
   aspect-ratio: 1;
   border-radius: 5px;
   opacity: 0;
+  z-index: 100;
 
   animation: showButton linear forwards;
   animation-timeline: view();
