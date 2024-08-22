@@ -39,3 +39,23 @@ document.addEventListener("DOMContentLoaded"),
       });
     });
   };
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var buttons = document.querySelectorAll('a[href^="#"]');
+    buttons.forEach(function(button) {
+        button.addEventListener("click", function(event) {
+            // Linke ait varsayılan davranışı engelle
+            event.preventDefault();
+
+            // Linkin hedefini al
+            var targetId = this.getAttribute("href").substring(1);
+            var targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                // Hedefe kaydır
+                targetElement.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    });
+});
+
